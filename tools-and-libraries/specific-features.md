@@ -105,9 +105,7 @@ sendTx(
 ): Promise<Uint8Array>;
 ```
 
-This function requests Keplr to delegates the broadcasting of the transaction to Keplr's LCD endpoints (rather than the webpage broadcasting the transaction). This method returns the transaction hash if it succeeds to broadcast, if else the method will throw an error. When Keplr broadcasts the transaction, Keplr will send the notification on the transaction's progress.
-
-이 함수는 Keplr에게, Keplr의 LCD 엔드포인트로 거래 브로드캐스팅을 위임하도록 요청합니다. 이 메서드는 브로드캐스팅에 성공하면 트랜잭션 해시를 반환하고 그렇지 않으면 오류를 반환합니다. Keplr가 거래를 브로드스팅하면, Keplr는 거래 진 상황에 대한 통지를 보낼 것입니다.
+이 함수는 Keplr에게, Keplr의 LCD 엔드포인트로 거래 브로드캐스팅을 위임하도록 요청합니다. 이 메서드는 브로드캐스팅에 성공하면 트랜잭션 해시를 반환하고 그렇지 않으면 오류를 반환합니다. Keplr가 거래를 브로드캐스팅하면, Keplr는 거래 진 상황에 대한 통지를 보낼 것입니다.
 
 ### Request Signature for Arbitrary Message <a href="#request-signature-for-arbitrary-message" id="request-signature-for-arbitrary-message"></a>
 
