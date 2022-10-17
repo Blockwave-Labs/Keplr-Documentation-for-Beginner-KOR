@@ -159,16 +159,16 @@ signEthereum(
 )
 ```
 
-This is an experimental implementation of native Ethereum signing in Keplr to be used by dApps on EVM-compatible chains such as Evmos.
-
 It supports signing either [Personal Messages (opens new window)](https://eips.ethereum.org/EIPS/eip-191)or [Transactions (opens new window)](https://ethereum.org/en/developers/docs/transactions/), with plans to support [Typed Data (opens new window)](https://eips.ethereum.org/EIPS/eip-712)in the future.
 
-이는 에브모스와 같은 EVM 호환 체인의 dApp에서 사용하기 위해 Keplr에서 네이티브 이더리움 서명을 실험적으로 구현한 것입니. 개[인 메시지 서명](https://eips.ethereum.org/EIPS/eip-191) 또는 트랜잭션 서명(새 창 열기)을 지원하며, 향후 유형 데이터(새 창 열기)를 지원할 계획입니다.
+이는 에브모스와 같은 EVM 호환 체인의 dApp에서 사용하기 위해 Keplr에서 네이티브 이더리움 서명을 실험적으로 구현한 것입니다.
 
-Notes on Usage:
+[개인 메시지 서명](https://eips.ethereum.org/EIPS/eip-191) 또는 [트랜잭션 서명](https://ethereum.org/en/developers/docs/transactions/)을 지원하며, 향후 [유형 데이터](https://eips.ethereum.org/EIPS/eip-712)를 지원할 계획입니다.
 
-* The `signer` field must be a Bech32 address, not an Ethereum hex address
-* The data should be either stringified JSON (for transactions) or a string message (for messages). Byte arrays are accepted as alternatives for either.
+사용 참고 사항:
+
+* `signer` 필드는 이더리움 16진수 주소가 아닌 Bech32 주소여야 합니다.
+* 데이터는 문자열화된 JSON(트랜잭션용) 또는 문자열 메시지(메시지용)여야 합니다. Byte 배열은 둘 중 하나의 대안으로 허용됩니다.
 
 ### Interaction Options <a href="#interaction-options" id="interaction-options"></a>
 
@@ -183,13 +183,13 @@ export interface KeplrSignOptions {
 }
 ```
 
-Keplr v0.8.11+ offers additional options to customize interactions between the frontend website and Keplr extension.
+Keplr v0.8.11+는 프런트 엔드 웹 사이트와 Keplr 익스텐 간의 상호 작용을 사용자 지정할 수 있는 추가 옵션을 제공합니다.&#x20;
 
-If `preferNoSetFee` is set to true, Keplr will prioritize the frontend-suggested fee rather than overriding the tx fee setting of the signing page.
+`preferNoSetFee`가 true로 설정되어 있는 경우, Keplr는 서명 페이지의 tx 수수료 설정을 재정의하는 대신 frontend-suggested 수수료를 우선시합니다.&#x20;
 
-If `preferNoSetMemo` is set to true, Keplr will not override the memo and set fix memo as the front-end set memo.
+`preferNoSetMemo`가 true로 설정된 경우, Keplr는 메모를 재정의하지 않고 수정 메모를 프런트 엔드 설정 메모로 설정합니다.&#x20;
 
-You can set the values as follows:
+다음과 같이 값을 설정할 수 있습니다.
 
 ```javascript
 window.keplr.defaultOptions = {
@@ -208,9 +208,9 @@ window.keplr.defaultOptions = {
 keplr_keystorechange
 ```
 
-When the user switches their key store/account after the webpage has received the information on the key store/account the key that the webpage is aware of may not match the selected key in Keplr which may cause issues in the interactions.
+웹 페이지가 키 저장소/계정에 대한 정보를 수신한 후 사용자가 키 저장소/계정을 전환할 때 웹 페이지가 인식하는 키가 Keplr에서 선택한 키와 일치하지 않을 수 있으므로 상호 작용에 문제가 발생할 수 있습니다.&#x20;
 
-To prevent this from happening, when the key store/account is changed, Keplr emits a `keplr_keystorechange` event to the webpage's window. You can request the new key/account based on this event listener.
+이러한 현상을 방지하기 위해 키 저장소/계정이 변경되면 Keplr는 웹 페이지의 창에 `keplr_keystorechange` 변경 이벤트를 발생시킵니다. 이 이벤트 수신기를 기준으로 새로운 키/계정을 요청할 수 있습니다.
 
 ```
 window.addEventListener("keplr_keystorechange", () => {
