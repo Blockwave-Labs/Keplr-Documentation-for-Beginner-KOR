@@ -60,7 +60,7 @@
 
 블록체인 경험이 처음이라면 어렵게 느껴지는 단어와 줄임말들이 많을거예요.&#x20;
 
-블록체인과 웹3를 음 접하시는 분들을 위해 [Cosmos Academy의 Blockchain 101 안내서](https://interchainacademy.cosmos.network/academy/0.0-B9lab-Blockchains/1\_blockchain.html)를 추천드릴게요.&#x20;
+블록체인과 웹3를 처음 접하시는 분들을 위해 [Cosmos Academy의 Blockchain 101 안내서](https://interchainacademy.cosmos.network/academy/0.0-B9lab-Blockchains/1\_blockchain.html)를 추천드릴게요.&#x20;
 
 그리고  [Binance의 크립토 용어집](https://academy.binance.com/en/glossary)에서 어려운 단어에 대한 풀이를 확인해보세요.
 
