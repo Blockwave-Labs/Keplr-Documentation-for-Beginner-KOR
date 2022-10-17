@@ -1,5 +1,5 @@
 ---
-description: 코스모스 생태계 전체를 가장 쉽게 이해할 수 있습니다.
+description: "\bUnderstanding the entire Cosmos ecosystem in easiest way."
 ---
 
 # Structure
@@ -14,7 +14,7 @@ description: 코스모스 생태계 전체를 가장 쉽게 이해할 수 있습
 
 <details>
 
-<summary>코스모스 생태계의 구조</summary>
+<summary>The structure of Cosmos ecosystem</summary>
 
 코스모스 생태계는 아래와 같은 세 가지 레이어로 구성되어 있습니다.
 
