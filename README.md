@@ -66,8 +66,8 @@
 
 ## Helpful Links
 
-Keplr Documentation for Beginner 문서는 블록체인이 처음인, 즉 웹2에서 웹3로 온보딩을 희망하는 프론트엔드 개발자분들을 위해서 만들어진 문서입니다. 특히 [Tutorials](tutorials/) 카테고리에 주로 사용하는 기능별 예시 코드를 작성해두었습니. 해당 문서를 통해 좀 더 쉬운 개발 경험을 하게 되셨으면 해요!&#x20;
+Keplr Documentation for Beginner 문서는 블록체인이 처음인, 즉 웹2에서 웹3로 온보딩을 희망하는 프론트엔드 개발자분들을 위해서 만들어진 문서입니다. 특히 [Tutorials](tutorials/) 카테고리에 주로 사용하는 기능별 예시 코드를 작성해두었어요. 해당 문서를 통해 좀 더 쉬운 개발 경험을 하게 되셨으면 해요!&#x20;
 
 수많은 블록체인 생태계 중에서도 코스모스 생태계를 탐험하러 오신 분들 모두 환영해요. 이 문서로 만나뵙게 되어 반갑습니다. 저희는 블록체인 위에서 금융 및 서비스 인프라를 만들어가는 [BlockwaveLabs](https://www.blockwavelabs.io/) 입니다.
 
-문서에 대한 피드백 및 질문사항은 [이곳](https://www.blockwavelabs.io/)으로 남겨주세요 :)
+문서에 대한 피드백 및 질문사항은 [이곳](https://twitter.com/BlockwaveL)으로 남겨주세요 :)
