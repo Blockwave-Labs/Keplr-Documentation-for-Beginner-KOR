@@ -105,7 +105,7 @@ sendTx(
 ): Promise<Uint8Array>;
 ```
 
-이 함수는 Keplr에게, Keplr의 LCD 엔드포인트로 거래 브로드캐스팅을 위임하도록 요청합니다. 이 메서드는 브로드캐스팅에 성공하면 트랜잭션 해시를 반환하고 그렇지 않으면 오류를 반환합니다. Keplr가 거래를 브로드캐스팅하면, Keplr는 거래 진 상황에 대한 통지를 보낼 것입니다.
+이 함수는 Keplr에게, Keplr의 LCD 엔드포인트로 거래 브로드캐스팅을 위임하도록 요청합니다. 이 메서드는 브로드캐스팅에 성공하면 트랜잭션 해시를 반환하고 그렇지 않으면 오류를 반환합니다. Keplr가 거래를 브로드캐스팅하면, Keplr는 거래 진행 상황에 대한 통지를 보낼 것입니다.
 
 ### Request Signature for Arbitrary Message <a href="#request-signature-for-arbitrary-message" id="request-signature-for-arbitrary-message"></a>
 
@@ -156,8 +156,6 @@ signEthereum(
   type: 'message' | 'transaction'
 )
 ```
-
-It supports signing either [Personal Messages (opens new window)](https://eips.ethereum.org/EIPS/eip-191)or [Transactions (opens new window)](https://ethereum.org/en/developers/docs/transactions/), with plans to support [Typed Data (opens new window)](https://eips.ethereum.org/EIPS/eip-712)in the future.
 
 이는 에브모스와 같은 EVM 호환 체인의 dApp에서 사용하기 위해 Keplr에서 네이티브 이더리움 서명을 실험적으로 구현한 것입니다.
 
