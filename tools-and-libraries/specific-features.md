@@ -125,7 +125,7 @@ verifyArbitrary(
 ): Promise<boolean>;
 ```
 
-이것은 [ADR-36](https://github.com/cosmos/cosmos-sdk/blob/main/docs/architecture/adr-036-arbitrary-signature.md)의 실험적인 구현입니. 이 기능은 사용자의 책임 하에 사용하세요.&#x20;
+이것은 [ADR-36](https://github.com/cosmos/cosmos-sdk/blob/main/docs/architecture/adr-036-arbitrary-signature.md)의 실험적인 구현입니다. 이 기능은 사용자의 책임 하에 사용하세요.&#x20;
 
 메인 용도는 `signArbitrary` API를 사용하여 ADR-36 서명을 요청하는 오프체인 계정의 소유권을 증명하는 것입니.&#x20;
 
