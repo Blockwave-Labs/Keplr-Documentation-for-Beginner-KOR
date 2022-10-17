@@ -1,13 +1,13 @@
 # SecretJs
 
-코스모스 생태계 안에 있는 시크릿 네트워크와 케플러를 연결하고 싶다면 SecretJs를 써서 쉽게 연결할 수 있습니다. SecretJs는 시크릿 네트워크 블록체인과 상호 작용하는 응용 프로그램을 작성하기 위한 자바스크립트 SDK입니. 만약 코스모스 생태계에 있는 Secret Network 에 대해서 궁금하다면 [이곳](https://scrt.network/about/about-secret-network/)에서 확인해볼 수 있습니다.
+코스모스 생태계 안에 있는 Secret Network와 케플러를 연결하고 싶다면 SecretJs를 써서 쉽게 연결할 수 있습니다. SecretJs는 Secret Network 블록체인과 상호 작용하는 응용 프로그램을 작성하기 위한 자바스크립트 SDK입니. 만약 코스모스 생태계에 있는 Secret Network 에 대해서 궁금하다면 [이곳](https://scrt.network/about/about-secret-network/)에서 확인해볼 수 있습니다.
 
-* Written in TypeScript and provided with type definitions.
-* Provides simple abstractions over core data structures.
-* Supports every possible message and transaction type.
-* Exposes every possible query type.
-* Handles input/output encryption/decryption for Secret Contracts.
-* Works in Node.js, modern web browsers and React Native.
+* TypeScript로 작성되었으며 유형 정의와 함께 제공됩니다.
+* 핵심 데이터 구조에 대한 간단한 추상화를 제공합니다.
+* 가능한 모든 메시지 및 트랜잭션 유형을 지원합니다.
+* 가능한 모든 쿼리 유형을 표시합니다.
+* 비밀 계약에 대한 입력/출력 암호화/복호화를 처리합니다.
+* Node.js, 최신 웹 브라우저 및 React Native에서 작동합니다.
 
 ## Get started with SecretJs
 
@@ -16,6 +16,12 @@
 SecretJS link: [https://www.npmjs.com/package/secretjs (opens new window)](https://www.npmjs.com/package/secretjs)The basics of using SecretJS is similar to CosmJS. Refer to the [Use with CosmJs](cosmjs.md) section for more information.
 
 One difference between CosmJS and SecretJS is that we recommend using Keplr's `EnigmaUtils`. By using Keplr's `EnigmaUtils`, you can use Keplr to encrypt/decrypt, and the decrypted transaction messages are shown to the user in a human-readable format.
+
+SecretJs 링크: [https://www.npmjs.com/package/secretjs](https://www.npmjs.com/package/secretjs)&#x20;
+
+SecretJs 사용 기본 사항은 CosmJs와 유사합니다. 자세한 내용은 [CosmJs](cosmjs.md) 섹션을 참조하세요.&#x20;
+
+CosmJs와 SecretJs 사이의 한 가지 차이점은 Keplr의 `EnigmaUtils` 를 사용하는 것을 추천한다는 것입니. Keplr의 `EnigmaUtils` 사를 사 용하면 Keplr을 사용하여 암호화/복호화할 수 있으며, 해독된 트랜잭션 메시지는 사람이 읽을 수 있는 형식으로 사용자에게 표시됩니다.
 
 ```javascript
 // Enabling before using the Keplr is recommended.
