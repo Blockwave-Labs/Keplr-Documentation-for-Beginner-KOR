@@ -1,8 +1,8 @@
 # Specific features
 
-If you were able to connect Keplr with CosmJs, you may skip to the [Use Keplr with CosmJ](cosmjs.md)[s](cosmjs.md) section.
+Keplr CosmJs와 연결할 수 있었다면 [Use Keplr with CosmJs](cosmjs.md) 섹션으로 건너뛸 수 있습니다.
 
-While Keplr supports an easy way to connect to CosmJs, there are additional functions specific to Keplr which provides additional features.
+Keplr CosmJs에 쉽게 연결할 수 있는 방법을 지원하지만, 추가 기능을 제공하는 Keplr에 특화된 추가 기능이 있습니다.
 
 ### Using with Typescript <a href="#using-with-typescript" id="using-with-typescript"></a>
 
@@ -17,14 +17,12 @@ declare global {
     }
 ```
 
-The `@keplr-wallet/types` package has the type definition related to Keplr.\
-If you're using TypeScript, run `npm install --save-dev @keplr-wallet/types` or `yarn add -D @keplr-wallet/types` to install `@keplr-wallet/types`.\
-Then, you can add the `@keplr-wallet/types` window to a global window object and register the Keplr related types.
+`@keplr-wallet/types` 패키지에는 Keplr 관련된 유형 정의가 있습니다. TypeScript를 사용하는 경우 `npm install --save-dev @keplr-wallet/types` 또는 `yarn add -D @keplr-wallet/types`를 실행하여 `@keplr-wallet/types`를 설치합니다. 그런 다음 `@keplr-wallet/types` 창을 글로벌 창 개체에 추가하고 Keplr 관련 유형을 등록할 수 있습니다.
 
-> Usage of any other packages besides @keplr-wallet/types is not recommended.
+> @keplr-wallet/types 이외의 다른 패키지는 사용하지 않는 것이 좋습니다.
 >
-> * Any other packages besides @keplr-wallet/types are actively being developed, backward compatibility is not in the scope of support.
-> * Since there are active changes being made, documentation is not being updated to the most recent version of the package as of right now. Documentations would be updated as packages get stable.
+> * @keplr-wallet/type 이외의 다른 패키지는 현재 활발히 개발 중이며 이전 버전과의 호환성은 지원 범위에 포함되지 않습니다.
+> * 현재 진행 중인 변경 사항이 있기 때문에 문서가 현재 최신 버전의 패키지로 업데이트되지 않습니다. 패키지가 안정되면 문서가 업데이트됩니다.
 
 ### Enable Connection <a href="#enable-connection" id="enable-connection"></a>
 
@@ -32,11 +30,11 @@ Then, you can add the `@keplr-wallet/types` window to a global window object and
 enable(chainIds: string | string[]): Promise<void>
 ```
 
-The `window.keplr.enable(chainIds)` method requests the extension to be unlocked if it's currently locked. If the user hasn't given permission to the webpage, it will ask the user to give permission for the webpage to access Keplr.
+`window.keplr.enable(chainIds)` 메서드는 확장이 현재 잠겨 있으면 잠금을 해제하도록 요청합니다. 사용자가 웹 페이지에 대한 권한을 부여하지 않은 경우 웹 페이지가 Keplr에 액세스할 수 있는 권한을 부여하도록 사용자에게 요청합니다.
 
-`enable` method can receive one or more chain-id as an array. When the array of chain-id is passed, you can request permissions for all chains that have not yet been authorized at once.
+`enable`메서드는 하나 이상의 체인 ID를 배열로 수신할 수 있습니다. chain-id 배열이 전달되면 아직 인증되지 않은 모든 체인에 대한 권한을 한 번에 요청할 수 있습니다.
 
-If the user cancels the unlock or rejects the permission, an error will be thrown.
+사용자가 잠금 해제를 취소하거나 권한을 거부하면 오류가 발생합니다.
 
 ### Get Address / Public Key <a href="#get-address-public-key" id="get-address-public-key"></a>
 
@@ -51,7 +49,7 @@ getKey(chainId: string): Promise<{
 }>
 ```
 
-If the webpage has permission and Keplr is unlocked, this function will return the address and public key in the following format:
+웹 페이지에 권한이 있고 Keplr가 잠금 해제된 경우 이 함수는 다음 형식으로 주소와 공용 키를 반환합니다.
 
 ```javascript
 {
@@ -65,8 +63,9 @@ If the webpage has permission and Keplr is unlocked, this function will return t
 }
 ```
 
-It also returns the nickname for the key store currently selected, which should allow the webpage to display the current key store selected to the user in a more convenient mane.\
-`isNanoLedger` field in the return type is used to indicate whether the selected account is from the Ledger Nano. Because current Cosmos app in the Ledger Nano doesn't support the direct (protobuf) format msgs, this field can be used to select the amino or direct signer. [Ref](https://docs.keplr.app/api/cosmjs.html#types-of-offline-signers)
+또한 현재 선택한 키 저장소에 대한 닉네임을 반환하므로 웹 페이지가 사용자에게 선택한 현재 키 저장소를 보다 편리한 방식으로 표시할 수 있습니다.
+
+반환 유형의 `isNanoLedger` 필드는 선택한 계정이 Ledger Nano에서 온 것인지 여부를 나타내는 데 사용됩니다. Ledger Nano의 현재 코스모스 앱은 direct (protobuf) 형식의 메시지들을 지원하지 않기 때문에, 이 필드는 amino 또는 direct 서명자를 선택하는 데 사용될 수 있습니다. [레퍼런스](https://docs.keplr.app/api/cosmjs.html#types-of-offline-signers)
 
 ### Sign Amino <a href="#sign-amino" id="sign-amino"></a>
 
@@ -74,7 +73,7 @@ It also returns the nickname for the key store currently selected, which should 
 signAmino(chainId: string, signer: string, signDoc: StdSignDoc): Promise<AminoSignResponse>
 ```
 
-Similar to CosmJS `OfflineSigner`'s `signAmino`, but Keplr's `signAmino` takes the chain-id as a required parameter. Signs Amino-encoded `StdSignDoc`.
+CosmJs `OfflineSigner`의 `signAmino` 와 비슷하지만 Keplr의 `signAmino`는 chain-id를 필수 매개 변수로 사용합니다. Amino-encoded `StdSignDoc`에 서명합니다.
 
 ### Sign Direct / Protobuf <a href="#sign-direct-protobuf" id="sign-direct-protobuf"></a>
 
@@ -94,7 +93,7 @@ signDirect(chainId:string, signer:string, signDoc: {
   }): Promise<DirectSignResponse>
 ```
 
-Similar to CosmJS `OfflineDirectSigner`'s `signDirect`, but Keplr's `signDirect` takes the chain-id as a required parameter. Signs Proto-encoded `StdSignDoc`.
+CosmJs `OfflineDirectSigner`의 `signDirect` 와 비슷하지만 Keplr의 `signDirect`는 chain-id를 필수 매개 변수로 사용합니다. Proto-encoded `StdSignDoc`에 서명합니다.
 
 ### Request Transaction Broadcasting <a href="#request-transaction-broadcasting" id="request-transaction-broadcasting"></a>
 
@@ -107,6 +106,8 @@ sendTx(
 ```
 
 This function requests Keplr to delegates the broadcasting of the transaction to Keplr's LCD endpoints (rather than the webpage broadcasting the transaction). This method returns the transaction hash if it succeeds to broadcast, if else the method will throw an error. When Keplr broadcasts the transaction, Keplr will send the notification on the transaction's progress.
+
+이 함수는 Keplr에게, 트랜잭션을 전하는 웹 페이지가 아닌 Keplr의 LCD 엔드포인트로 트랜잭션 전달을 위임하도록 요청합니다. 이 메서드는 트랜잭션 해시를 전 성공하면 반환하고 그렇지 않으면 오류를 반환합니다. Keplr 거래를 전하면, Keplr는 거래 진행 상황에 대한 통지를 보낼 것입니다.
 
 ### Request Signature for Arbitrary Message <a href="#request-signature-for-arbitrary-message" id="request-signature-for-arbitrary-message"></a>
 
@@ -129,6 +130,10 @@ This is an experimental implementation of [ADR-36 (opens new window)](https://gi
 It's main usage is to prove ownership of an account off-chain, requesting ADR-36 signature using the `signArbitrary` API.
 
 If requested sign doc with the `signAnimo` API with the ADR-36 that Keplr requires instead of using the `signArbitary` API, it would function as `signArbitary`
+
+이것은 [ADR-36](https://github.com/cosmos/cosmos-sdk/blob/main/docs/architecture/adr-036-arbitrary-signature.md)의 실험적인 구현입니. 이 기능은 사용자의 책임 하에 사용하세요.&#x20;
+
+요 용도는 사인 임의 API를 사용하여 ADR-36 서명을 요청하는 오프체인 계정의 소유권을 증명하는 것이다. Keplr이 signArbitary API를 사용하는 대신 ADR-36을 사용하는 signAnimo API로 signDoc을 요청하면 signArbitary로 작동합니다.
 
 * Only supports sign doc in the format of Amino. (in the case of protobuf, [ADR-36 (opens new window)](https://github.com/cosmos/cosmos-sdk/blob/master/docs/architecture/adr-036-arbitrary-signature.md)requirements aren't fully specified for implementation)
 * sign doc message should be single and the message type should be "sign/MsgSignData"
