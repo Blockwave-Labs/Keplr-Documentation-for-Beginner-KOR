@@ -13,15 +13,11 @@
 
 ### Connecting with SecretJs
 
-SecretJS link: [https://www.npmjs.com/package/secretjs (opens new window)](https://www.npmjs.com/package/secretjs)The basics of using SecretJS is similar to CosmJS. Refer to the [Use with CosmJs](cosmjs.md) section for more information.
-
-One difference between CosmJS and SecretJS is that we recommend using Keplr's `EnigmaUtils`. By using Keplr's `EnigmaUtils`, you can use Keplr to encrypt/decrypt, and the decrypted transaction messages are shown to the user in a human-readable format.
-
 SecretJs 링크: [https://www.npmjs.com/package/secretjs](https://www.npmjs.com/package/secretjs)&#x20;
 
 SecretJs 사용 기본 사항은 CosmJs와 유사합니다. 자세한 내용은 [CosmJs](cosmjs.md) 섹션을 참조하세요.&#x20;
 
-CosmJs와 SecretJs 사이의 한 가지 차이점은 Keplr의 `EnigmaUtils` 를 사용하는 것을 추천한다는 것입니. Keplr의 `EnigmaUtils` 사를 사 용하면 Keplr을 사용하여 암호화/복호화할 수 있으며, 해독된 트랜잭션 메시지는 사람이 읽을 수 있는 형식으로 사용자에게 표시됩니다.
+CosmJs와 SecretJs 사이의 한 가지 차이점은 Keplr의 `EnigmaUtils` 를 사용하는 것을 추천한다는 것입니. Keplr의 `EnigmaUtils` 를 사용하면 Keplr을 사용하여 암호화/복호화할 수 있으며, 해독된 트랜잭션 메시지는 사람이 읽을 수 있는 형식으로 사용자에게 표시됩니다.
 
 ```javascript
 // Enabling before using the Keplr is recommended.
@@ -53,7 +49,7 @@ const cosmJS = new SigningCosmWasmClient(
 async suggestToken(chainId: string, contractAddress: string): Promise<void>
 ```
 
-The webpage can request the user permission to add a SNIP-20 token to Keplr's token list. Will throw an error if the user rejects the request. If a SNIP-20 with the same contract address already exists, nothing will happen.
+웹 페이지는 SNIP-20 토큰을 Keplr의 토큰 목록에 추가할 수 있는 사용자 권한을 요청할 수 있습니다. 사용자가 요청을 거부할 경우 오류가 발생합니다. 동일한 계약 주소를 가진 SNIP-20이 이미 존재한다면, 아무 일도 일어나지 않을 것입니다.
 
 #### Get SNIP-20 Viewing Key <a href="#get-snip-20-viewing-key" id="get-snip-20-viewing-key"></a>
 
@@ -64,8 +60,10 @@ getSecret20ViewingKey(
 ): Promise<string>;
 ```
 
-Returns the viewing key of a SNIP-20 token registered in Keplr. If the SNIP-20 of the contract address doesn't exist, it will throw an error.
+Keplr에 등록된 SNIP-20 토큰의 viewing key를 반환합니다. 계약서 주소의 SNIP-20이 존재하지 않으면 오류를 발생시킵니다.
 
 #### Interaction Options
 
-You can use Keplr native API’s to set interaction options even when using SecretJS. Please refer to [this section](https://docs.keplr.app/api/#interaction-options).\
+You can use Keplr native API’s to set interaction options even when using SecretJS. Please refer to [this section](https://docs.keplr.app/api/#interaction-options).
+
+SecretJs를 사용하는 경우에도 Keplr의 native API를 사용하여 상호 작용 옵션을 설정할 수 있습니다. 이 섹션을 참조하십시오.\
