@@ -125,32 +125,28 @@ verifyArbitrary(
 ): Promise<boolean>;
 ```
 
-This is an experimental implementation of [ADR-36 (opens new window)](https://github.com/cosmos/cosmos-sdk/blob/master/docs/architecture/adr-036-arbitrary-signature.md). Use this feature at your own risk.
-
-It's main usage is to prove ownership of an account off-chain, requesting ADR-36 signature using the `signArbitrary` API.
-
-If requested sign doc with the `signAnimo` API with the ADR-36 that Keplr requires instead of using the `signArbitary` API, it would function as `signArbitary`
-
 이것은 [ADR-36](https://github.com/cosmos/cosmos-sdk/blob/main/docs/architecture/adr-036-arbitrary-signature.md)의 실험적인 구현입니. 이 기능은 사용자의 책임 하에 사용하세요.&#x20;
 
-요 용도는 사인 임의 API를 사용하여 ADR-36 서명을 요청하는 오프체인 계정의 소유권을 증명하는 것이다. Keplr이 signArbitary API를 사용하는 대신 ADR-36을 사용하는 signAnimo API로 signDoc을 요청하면 signArbitary로 작동합니다.
+메인 용도는 `signArbitrary` API를 사용하여 ADR-36 서명을 요청하는 오프체인 계정의 소유권을 증명하는 것입니.&#x20;
 
-* Only supports sign doc in the format of Amino. (in the case of protobuf, [ADR-36 (opens new window)](https://github.com/cosmos/cosmos-sdk/blob/master/docs/architecture/adr-036-arbitrary-signature.md)requirements aren't fully specified for implementation)
-* sign doc message should be single and the message type should be "sign/MsgSignData"
-* sign doc "sign/MsgSignData" message should have "signer" and "data" as its value. "data" should be base64 encoded
-* sign doc chain\_id should be an empty string("")
-* sign doc memo should be an empty string("")
-* sign doc account\_number should be "0"
-* sign doc sequence should be "0"
-* sign doc fee should be `{gas: "0", amount: []}`
+Keplr `signArbitary` API를 사용하는 대신 ADR-36을 사용하는 `signAnimo` API로 sign doc을 요청하면 `signArbitary`로 작동합니다.
 
-When using the `signArbitrary` API, if the `data` parameter type is `string`, the signature page displays as plain text.
+* Amino 형식의 sign doc만 지원합니다. (protobuf의 경우, 구현에 대한 [ADR-36](https://github.com/cosmos/cosmos-sdk/blob/main/docs/architecture/adr-036-arbitrary-signature.md) 요구사항이 완전히 지정되지 않았습니다)
+* sign doc 메시지는 단일이고 메시지 유형은 "sign/MsgSignData"여야 합니다.
+* sign doc "sign/MsgSignData" 메시지는 "signer"와 "data"를 값으로 지정해야 합니다. "data"는 base64로 인코딩되어야 합니다.
+* sign doc의 chain\_id는 빈 문자열이어야 합니다("")
+* sign doc의 memo는 빈 문자열이어야 합니다("")
+* sign doc의 account\_number는 "0"이어야 합니다.
+* sign doc의 sequence는 "0"이어야 합니다.
+* sign doc의 fee는 `{gas: "0", amount: []}`이어야 합니다.
 
-Using `verifyArbitrary`, you can verify the results requested by `signArbitrary` API or `signAmino` API that has been requested with the ADR-36 spec standards.
+`signArbitrary` API를 사용할 때 `data` 매개 변수 유형이 `string`이면, 서명 페이지가 일반 텍스트로 표시됩니다.&#x20;
 
-`verifyArbitrary` has been only implemented for simple usage. `verifyArbitrary` returns the result of the verification of the current selected account's sign doc. If the account is not the currently selected account, it would throw an error.
+`verifyArbitrary`를 사용하면 `signArbitrary` API 또는 ADR-36 사양 표준으로 요청된 `signAmino` API에서 요청한 결과를 확인할 수 있습니다.
 
-It is recommended to use `verifyADR36Amino` function in the `@keplr-wallet/cosmos` package or your own implementation instead of using `verifyArbitrary` API.
+`verifyArbitrary`는 단순한 사용을 위해 구현되었습니다. `verifyArbitrary`는 현재 선택한 계정의 sign doc에 대한 확인 결과를 반환합니다. 계정이 현재 선택한 계정이 아닌 경우 오류가 발생합니다.&#x20;
+
+`@keplr-wallet/cosmos`패키지 안에 있는 `verifyADR36Amino` 기능을 사용하거나 `verifyArbitrary` API를 사용하는 대신 사용자 자신의 구현을 사용하는 것이 좋습니다.
 
 ### Request Ethereum Signature <a href="#request-ethereum-signature" id="request-ethereum-signature"></a>
 
@@ -166,6 +162,8 @@ signEthereum(
 This is an experimental implementation of native Ethereum signing in Keplr to be used by dApps on EVM-compatible chains such as Evmos.
 
 It supports signing either [Personal Messages (opens new window)](https://eips.ethereum.org/EIPS/eip-191)or [Transactions (opens new window)](https://ethereum.org/en/developers/docs/transactions/), with plans to support [Typed Data (opens new window)](https://eips.ethereum.org/EIPS/eip-712)in the future.
+
+이는 에브모스와 같은 EVM 호환 체인의 dApp에서 사용하기 위해 Keplr에서 네이티브 이더리움 서명을 실험적으로 구현한 것입니. 개[인 메시지 서명](https://eips.ethereum.org/EIPS/eip-191) 또는 트랜잭션 서명(새 창 열기)을 지원하며, 향후 유형 데이터(새 창 열기)를 지원할 계획입니다.
 
 Notes on Usage:
 

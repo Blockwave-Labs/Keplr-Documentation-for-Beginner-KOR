@@ -1,10 +1,10 @@
 # Tools & Libraries
 
-아래의 도구를 활용하면 Keplr를 더욱 쉽게 사용하실 수 있습니다.
-
-만약 Keplr를 처음 사용하는 경우에는 [시작 가이드](../getting-started.md)를 먼저 확인해주세요.
+아래의 도구를 활용하면 Keplr를 더욱 쉽게 사용하실 수 있습니다. 만약 Keplr를 처음 사용하는 경우에는 [시작 가이드](../getting-started.md)를 먼저 확인해주세요.
 
 ### Keplr Development Suite
+
+
 
 케플러를 가장 쉽게 연동려면 CosmJs 라이브러리를 활용해보세요.
 
