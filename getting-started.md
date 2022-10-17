@@ -86,7 +86,7 @@ Keplr 익스텐션에 통합 되어있지 않은 새로운 Cosmos SDK 기반 블
 
 ### - Specific Features
 
-Keplr를 CosmJs와 연결하는 방법을 알고 있다면 [CosmJs](tools-and-libraries/cosmjs.md) 섹션으로 건너뛸 수 있습니다. Keplr는 CosmJs에 쉽게 연결할 수 있는 방법을 지원하지만, 추가적인 특성을 제공하는 Keplr에 특화된 기능이 있습니다. 여기에서 특정 기능을 확인해보세요.
+Keplr를 CosmJs와 연결하는 방법을 알고 있다면 [CosmJs](tools-and-libraries/cosmjs.md) 섹션으로 건너뛸 수 있습니다. While Keplr supports an easy way to connect to CosmJs, there are additional functions specific to Keplr which provides additional features. Keplr는 CosmJs에 쉽게 연결할 수 있는 방법을 지원하지만, 추가 기능을 제공하는 Keplr에 특화된 추가 기능이 있습니다. 여기에서 특정 기능을 확인해보세요.
 
 ### - SecretJs
 
