@@ -64,6 +64,4 @@ Keplr에 등록된 SNIP-20 토큰의 viewing key를 반환합니다. 계약서 �
 
 #### Interaction Options
 
-You can use Keplr native API’s to set interaction options even when using SecretJS. Please refer to [this section](https://docs.keplr.app/api/#interaction-options).
-
-SecretJs를 사용하는 경우에도 Keplr의 native API를 사용하여 상호 작용 옵션을 설정할 수 있습니다. 이 섹션을 참조하십시오.\
+SecretJs를 사용하는 경우에도 Keplr의 native API를 사용하여 상호 작용 옵션을 설정할 수 있습니다. 이 [섹션](specific-features.md#interaction-options)을 참조하십시오.\
